@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TE QUIERO MUCHO</title>
+    <link rel="shortcut icon" href="cora.png" type="image/x-icon">
+    <style>
+        :root {
+            --dark-color: #000;
+            --highlight-color: #FAB4B3; /* Color de resaltado */
+        }
+
+        body {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000; /* Fondo negro */
+            overflow: hidden;
+            perspective: 1000px;
+            position: relative; /* Permitir posicionar los corazones */
+        }
+
+        .dedicatoria {
+            position: absolute;
+            top: 30%; /* Cambio en la posición vertical */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif; /* Cambiar la fuente del texto */
+            font-size: 24px; /* Tamaño de la fuente */
+        }
+
+        /* Estilo intermitente para el texto "FELIZ SAN VALENTÍN" */
+        .intermitente {
+            color: var(--highlight-color); /* Color de resaltado */
+            animation: iluminar 1s ease infinite alternate; /* Animación intermitente */
+        }
+
+        @keyframes iluminar {
+            0% {
+                color: transparent; /* Hacer la letra transparente */
+            }
+            100% {
+                color: var(--highlight-color); /* Hacer la letra visible */
+            }
+        }
+
+        img {
+            width: 160px; /* Nuevo tamaño de las imágenes */
+            height: 160px; /* Nuevo tamaño de las imágenes */
+            margin: 10px; /* Espacio entre las imágenes */
+            cursor: pointer;
+        }
+
+        .mensaje {
+            color: white;
+            font-size: 18px;
+            margin-top: 10px; /* Reducción del margen superior */
+        }
+
+        /* Estilo del mensaje */
+        #message {
+            background-color: rgba(26, 40, 48, 0.8); /* Fondo del mensaje */
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 100px; /* Ajuste en el margen superior */
+            font-weight: bold; /* Negrita */
+            color: white;
+            font-size: 24px; /* Tamaño de fuente */
+        }
+    </style>
+</head>
+<body>
+<div class="night">
+    <div class="dedicatoria">
+        <!-- Texto "TE AMO MI FUTURA LABORATORISTA" con efecto intermitente -->
+        <h1 class="intermitente">TE AMO NANIPACHE</h1>
+        <!-- Imágenes y mensajes -->
+        <img class="imagen" src="foto1.png" alt="Foto 1" onclick="mostrarMensaje('¡Un poco de lo que siento jsjsjs 💕!', 'carta.html')">
+        <img class="imagen" src="foto2.png" alt="Foto 2" onclick="mostrarMensaje('¡Una Cancioncita con cariño para ti :3!', 'music.html')">
+        <img class="imagen" src="foto3.png" alt="Foto 3" onclick="mostrarMensaje('¡Leelo jsjsjsjsjs!', 'ME REGUSTAS.pdf')">
+        <img class="imagen" src="foto4.png" alt="Foto 4" onclick="mostrarMensaje('¡Toma una rosita por bonitaaaa 💓!', 'rosa.html')">
+        <img class="imagen" src="foto5.png" alt="Foto 5" onclick="mostrarMensaje('ERES MI MUNDO ENTERO', 'flor/flower.html')">
+
+        <div class="mensaje">Da click en alguna para ver qué pasa bombona 👀</div> <!-- Nuevo elemento HTML -->
+    </div>
+</div>
+
+<!-- Div para mostrar el mensaje -->
+<div id="message" class="hidden"></div>
+
+<script>
+    function mostrarMensaje(mensaje, url) {
+        const message = document.getElementById('message');
+        message.textContent = mensaje;
+        message.classList.remove('hidden');
+        setTimeout(function() {
+            message.classList.add('hidden');
+            window.open(url, '_blank');
+        }, 3000);
+    }
+</script>
+</body>
+</html>
